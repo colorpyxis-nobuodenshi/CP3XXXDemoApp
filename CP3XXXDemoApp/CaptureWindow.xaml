@@ -1,0 +1,28 @@
+﻿<Window x:Class="CP3XXXDemoApp.CaptureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CP3XXXDemoApp"
+        mc:Ignorable="d"
+        Title="CaptureWindow" Height="450" Width="800"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel  Width="200" Margin="20">
+                <Button x:Name="btnCapture" Content="取込" />
+                <Button x:Name="btnLive" Content="ライブ" />
+                <!--<Button x:Name="btnCommand" Content="送信" />
+                <TextBox x:Name="txtCommand"/>
+                <TextBox x:Name="txtResult"/>-->
+                <ComboBox x:Name="cmbExposureTime"/>
+                <TextBlock x:Name="txtXYZValue" Text="(0, 0, 0)" TextAlignment="Center" FontSize="16"/>
+                <Button x:Name="btnMakeShadingpixels" Content="感度むら補正データ作成" />
+            </StackPanel>
+            <Image x:Name="imageCapture" Stretch="Fill" Height="384" Width="512" Margin="20 0 20 0"/>    
+        </StackPanel>
+
+        <!--<Button x:Name="btnSetWhitepoint" Content="SetWhitepoint" HorizontalAlignment="Left" Margin="32,145,0,0" VerticalAlignment="Top"/>-->
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="CP3XXXDemoApp.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CP3XXXDemoApp"
+        mc:Ignorable="d"
+        Title="測定条件設定" Height="450" Width="800"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center">対象</TextBlock>
+                <ComboBox Name="listSample"/>
+                <Grid>
+                    <Image Width="400" Height="300" x:Name="imageSample"/>
+                    <Canvas Background="Transparent" x:Name="draw1">
+                        <Path Stroke="Lime">
+                            <Path.Data>
+                                <RectangleGeometry x:Name="selectionROIRect1"/>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </Grid>
+                <TextBlock x:Name="Whitepoint" Text="(0,0,0)" Foreground="DarkGoldenrod" FontSize="20" TextAlignment="Center"/>
+                <Button x:Name="btnSetWhitepoint" Content="白色点設定"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

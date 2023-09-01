@@ -1,0 +1,39 @@
+﻿<Window x:Class="CP3XXXDemoApp.ColorShadingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CP3XXXDemoApp"
+        mc:Ignorable="d"
+        Title="色むら" Height="450" Width="900"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center">対象</TextBlock>
+                <ComboBox Name="listSample"/>
+                <Grid>
+                    <Image Width="400" Height="300" x:Name="imageSample"/>
+                    <Canvas Background="Transparent" x:Name="draw1">
+                        <Path Stroke="Lime">
+                            <Path.Data>
+                                <RectangleGeometry x:Name="selectionROIRect1"/>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </Grid>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0 0 0">
+                <TextBlock HorizontalAlignment="Center">色むら</TextBlock>
+                <Image Width="400" Height="300" x:Name="imageColorhading" Margin="0 20 0 0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock x:Name="DEMin" Text="" FontSize="12"/>
+                    <Image Width="256" Height="10" x:Name="imageColorBar"/>
+                    <TextBlock x:Name="DEMax" Text="" FontSize="12"/>
+                </StackPanel>
+                <TextBlock x:Name="Result" FontSize="20" Foreground="DarkGoldenrod" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

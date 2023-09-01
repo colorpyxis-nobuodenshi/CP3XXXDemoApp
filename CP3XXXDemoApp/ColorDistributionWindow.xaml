@@ -1,0 +1,76 @@
+﻿<Window x:Class="CP3XXXDemoApp.ColorDistributionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CP3XXXDemoApp"
+        mc:Ignorable="d"
+        Title="色分布" Height="500" Width="900"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Margin="0 40 0 0">
+                <TextBlock HorizontalAlignment="Center">対象</TextBlock>
+                <ComboBox Name="listSample"/>
+                <Grid>
+                    <Image Width="400" Height="300" x:Name="imageSample"/>
+                    <Canvas Background="Transparent" x:Name="draw1">
+                        <Path Stroke="Lime">
+                            <Path.Data>
+                                <RectangleGeometry x:Name="selectionROIRect1"/>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </Grid>
+                <Image Width="300" Height="80"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" Margin="30 0 0 0">
+                <TextBlock HorizontalAlignment="Center">色分布</TextBlock>
+                <Canvas Width="330" Height="330" x:Name="colorDistributionArea">
+                    <TextBlock Canvas.Left="150" Text="b*+(黄)90°"/>
+                    <TextBlock Canvas.Left="150" Canvas.Top="320" Text="b*-(青)270°"/>
+                    <TextBlock Canvas.Top="145" Canvas.Left="310" Text="a*+(赤)"/>
+                    <TextBlock Canvas.Top="165" Canvas.Left="310" Text="0°"/>
+                    <TextBlock Canvas.Top="145" Text="a*-(緑)"/>
+                    <TextBlock Canvas.Top="165" Text="180°"/>
+                    <TextBlock Canvas.Top="165" Canvas.Left="225" Text="50"/>
+                    <TextBlock Canvas.Top="165" Canvas.Left="285" Text="100"/>
+                    <TextBlock Canvas.Top="165" Canvas.Left="100" Text="-50"/>
+                    <TextBlock Canvas.Top="165" Canvas.Left="40" Text="-100"/>
+                    <TextBlock Canvas.Top="90" Canvas.Left="165" Text="50"/>
+                    <TextBlock Canvas.Top="25" Canvas.Left="165" Text="100"/>
+                    <TextBlock Canvas.Top="225" Canvas.Left="165" Text="-50"/>
+                    <TextBlock Canvas.Top="285" Canvas.Left="165" Text="-100"/>
+                    <Line X1="10" X2="320" Y1="165" Y2="165" Stroke="Gray" StrokeThickness="1" RenderOptions.EdgeMode="Aliased"/>
+                    <Line X1="165" X2="165" Y1="10" Y2="320" Stroke="Gray" StrokeThickness="1" RenderOptions.EdgeMode="Aliased"/>
+                    <Ellipse Width="125" Height="125" Stroke="Gray" Canvas.Left="103" Canvas.Top="103" StrokeThickness="1" RenderOptions.EdgeMode="Aliased"/>
+                    <Ellipse Width="250" Height="250" Stroke="Gray" Canvas.Left="40" Canvas.Top="40" StrokeThickness="1" RenderOptions.EdgeMode="Aliased"/>
+                    <!--<Ellipse Width="300" Height="300" Stroke="Gray" Canvas.Left="15" Canvas.Top="15"/>-->
+                    <Image Width="300" Height="300" x:Name="imageColorDistribution" Margin="15"/>
+                </Canvas>
+                <!--<StackPanel Orientation="Horizontal" x:Name="colorDistributionArea">
+                    <TextBlock Text="a*-(緑)" VerticalAlignment="Center"/>
+                    <StackPanel>
+                        <TextBlock Text="b*+(黄)" HorizontalAlignment="Center"/>
+                        <Image Width="300" Height="300" x:Name="imageColorDistribution"/>
+                        <TextBlock Text="b*-(青)" HorizontalAlignment="Center"/>
+                        --><!--<TextBlock Text="DIV 20" HorizontalAlignment="Right"/>--><!--
+                    </StackPanel>
+                    <TextBlock Text="a*+(赤)" VerticalAlignment="Center"/>
+                </StackPanel>
+                -->
+                <StackPanel x:Name="LHistgramArea">
+                    <TextBlock Text="L*"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="0" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                        <Image Width="300" Height="60" x:Name="imageLHistgram" Margin="0 5 0 0" RenderOptions.EdgeMode="Aliased"/>
+                        <TextBlock Text="100" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                    
+                </StackPanel>
+                <TextBlock x:Name="Result" Foreground="DarkGoldenrod" FontSize="20"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
